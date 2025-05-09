@@ -9,6 +9,7 @@ const Login = () => {
   const [password, setpassword] = useState("Sanjai@2005");
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const [error, setError] = useState("")
   const handleLogin = async () => {
     try {
       const res = await axios.post(
@@ -23,7 +24,9 @@ const Login = () => {
       dispatch(addUser(res.data));
       navigate("/feed");
     } catch (err) {
-      console.error("ERROR : " + err.message);
+      setError( err?.response?.data?.message || "Something Went Wrong")
+      console.error ( err);
+    
     }
   };
 
@@ -55,7 +58,7 @@ const Login = () => {
                 />
               </fieldset>
             </div>
-
+            <p className ="text-red-400 -mt-5 mb-3">{error}</p>
             <div className="card-actions justify-center">
               <button
                 className="btn btn-primary bg-gray-500 rounded-xl text-[16px] px-6"
