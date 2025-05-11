@@ -45,7 +45,7 @@ const Connections = () => {
               <img
                 src={photoUrl}
                 alt="profile"
-                className="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-gray-700 object-cover shadow-md"
+                className="w-24 h-24 rounded-full mx-auto mb-4 border-4 border-blue-400 object-cover shadow-md "
               />
               <h2 className="text-xl font-bold text-gray-200">{firstName} {lastName}</h2>
               <p className="text-sm text-purple-300 mt-1 italic">{gender} | Age: {age}</p>
