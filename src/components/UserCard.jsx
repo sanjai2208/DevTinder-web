@@ -2,7 +2,6 @@ import React from 'react'
 
 const UserCard = ({userDetail}) => {
     const {firstName, lastName, photoUrl, age, gender, about } = userDetail
-    
   return (
     <div className=''>
         <div className="card bg-gray-800 w-[350px] shadow-sm rounded-3xl">

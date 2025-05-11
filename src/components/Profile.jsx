@@ -1,17 +1,20 @@
-import EditProfile from "./EditProfile"
+import EditProfile from "./EditProfile";
 import { useSelector } from "react-redux";
-import UserCard from "./UserCard"
+import ViewProfile from "./ViewProfile";
 
 const Profile = () => {
+  const isEditMode = useSelector((store) => store?.toggle?.isEditMode);
   const loggedInUser = useSelector((store) => store?.user);
+  if (!loggedInUser) return;
   return (
-    <div >
-      {loggedInUser&& <EditProfile loggedInUser={loggedInUser}/>  }
-      
-      
-      
+    <div>
+      {isEditMode ? (
+        <EditProfile loggedInUser={loggedInUser} />
+      ) : (
+        <ViewProfile loggedInUser={loggedInUser} />
+      )}
     </div>
-  )
-}
+  );
+};
 
-export default Profile
+export default Profile;

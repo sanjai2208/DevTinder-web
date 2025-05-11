@@ -9,7 +9,7 @@ const userSlice = createSlice({
         },
         removeUser : () => {
             return null;
-        }
+        },
     }
 })
 export default userSlice.reducer
