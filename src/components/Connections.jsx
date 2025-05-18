@@ -15,7 +15,7 @@ const Connections = () => {
       });
       dispatch(addConnections(connections?.data?.data));
     } catch (err) {
-      console.log(err.message);
+      
     }
   };
 
@@ -26,7 +26,8 @@ const Connections = () => {
   if (!connectionsList)
     return <h1 className="font-bold text-2xl text-center mt-10 ">No Connections Found</h1>;
 
-  if (connectionsList.length === 0) return null;
+  if (connectionsList.length === 0) return  <h1 className="font-bold text-2xl text-center mt-10 ">No Connections Found</h1>;;
+
 
   return (
     <div className="text-center my-10 px-4">

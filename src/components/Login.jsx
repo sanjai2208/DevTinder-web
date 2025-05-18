@@ -27,9 +27,12 @@ const Login = () => {
       navigate("/feed");
     } catch (err) {
       setError(err?.response?.data?.message || "Something Went Wrong")
-      console.error(err);
+      
     }
   };
+  const handleSignUp = () => {
+    navigate("/SignUp")
+  }
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-black">
@@ -68,6 +71,7 @@ const Login = () => {
                 Login
               </button>
             </div>
+            <p className="mt-2 font-medium cursor-pointer hover:text-blue-300" onClick={()=>handleSignUp()}>New User? Sign Up Here</p>
           </div>
         </div>
       </div>
